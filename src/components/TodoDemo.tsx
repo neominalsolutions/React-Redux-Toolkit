@@ -6,6 +6,7 @@ import { add, fetchTodos, Todo } from "../store/todo-slice";
 type Props = {};
 
 export default function TodoDemo({}: Props) {
+  // todoState ile apidan gelen todos bilgisine bağlandık
   const todoState = useSelector((state: RootState) => state.todo);
   const dispatch = useDispatch<AppDispatch>();
 
@@ -20,6 +21,7 @@ export default function TodoDemo({}: Props) {
   };
 
   useEffect(() => {
+    // API Call var bu sebeple use Effecte çektik.
     dispatch(fetchTodos());
   }, []);
 
