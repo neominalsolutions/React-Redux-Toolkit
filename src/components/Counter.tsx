@@ -5,7 +5,7 @@ import { RootState } from "../store/store";
 type Props = {};
 
 export default function Counter({}: Props) {
-  const counter = useSelector((state: RootState) => state.counter.value);
+  const counterState = useSelector((state: RootState) => state.counter);
 
-  return <div>Counter: {counter}</div>;
+  return <div>Counter: {counterState.counter}</div>;
 }
